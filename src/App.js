@@ -1,9 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React, {useState} from 'react'
+import ColorBlock from './ColorBlock'
 
 function App() {
-  return (
-    <div className="App">
+    let colors = ['red', 'orange', 'yellow', 'greenyellow', 'green', 'skyblue', 'blue', 'violet' ]
+    let colorMap = colors.map((color,i)=>{
+        return (
+            <ColorBlock color={color} key={i} />
+        )
+    })
+    return (
+        <div className="App">
+            {colorMap}
+        </div>
+    );
+}
+
+export default App;
+
+
+/*
+
+import logo from './logo.svg';
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,8 +38,5 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
-  );
-}
 
-export default App;
+*/
